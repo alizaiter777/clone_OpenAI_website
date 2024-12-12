@@ -3,12 +3,45 @@
     top: 0;
     width: 100%;
     background:rgba(128, 128, 128, 0.068); 
-    z-index: 100;
+    
     display: flex;
     justify-content: space-between; 
     align-items: center; 
     padding: 0 20px; 
 }
+
+.container{
+    text-align: center;
+    color: var(--color);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between; 
+
+    flex-direction: row;
+    align-items: center;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container-item{
+    text-align: center;
+}
+.container-item:first-child{
+    text-align: left;
+}
+.container-item:last-child{
+    text-align: right;
+}
+.container ul {
+    list-style: none;
+    padding: 0;
+    
+    margin: 0 ;
+    
+}
+
 .navbar-item {
     text-align: center; 
     margin-left: 100px;
