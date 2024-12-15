@@ -21,3 +21,5 @@ function loadPage() {
         console.error("Menu toggle or nav links element not found.");
     }
 }
+
+
