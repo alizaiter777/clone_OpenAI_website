@@ -39,6 +39,26 @@ function loadPage() {
         cardRowResearch.style.transform = `translateX(${currentTranslateResearch}px)`;
     });
 
+
+    const prevBtnBusiness = document.getElementById('prev-business');
+    const nextBtnBusiness = document.getElementById('next-business');
+    const cardRowBusiness = document.getElementById('cardRow-business');
+    const cardWidthBusiness = cardRowResearch.querySelector('.card').offsetWidth;
+    let currentTranslateBusiness = 0;
+
+    prevBtnBusiness.addEventListener('click', () => {
+        currentTranslateBusiness += cardWidthBusiness;
+        if (currentTranslateBusiness > 0) currentTranslateBusiness = 0;
+        cardRowBusiness.style.transform = `translateX(${currentTranslateBusiness}px)`;
+    });
+
+    nextBtnBusiness.addEventListener('click', () => {
+        currentTranslateBusiness -= cardWidthBusiness;
+        const maxTranslateBusiness = -(cardRowBusiness.scrollWidth - cardRowBusiness.clientWidth);
+        if (currentTranslateBusiness < maxTranslateBusiness) currentTranslateBusiness = maxTranslateBusiness;
+        cardRowBusiness.style.transform = `translateX(${currentTranslateBusiness}px)`;
+    });
+
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (menuToggle && navLinks) {
