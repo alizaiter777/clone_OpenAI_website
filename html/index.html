@@ -2,10 +2,9 @@
 <head>
     <title>OpenAI</title>
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/slides.css">
+    <link rel="stylesheet" href="../css/cards.css">
 
-    <script src="../js/navbar.js" type="text/javascript"></script>
-    <script src="../js/slides.js" type="text/javascript"></script>
+    <script src="../js/navbar.js" type="text/javascript" defer></script>
 
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,7 +64,6 @@
               <div id="myCarousel" class="carousel slide" data-ride="carousel" style="color: black;">
                
                
-            
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
             
@@ -98,9 +96,6 @@
               </div>
             </div>
              
-<style>
-  
-</style>
               <ol class="carousel-indicators"  >
                     
                 <li style="background-color: black;" data-target="#myCarousel" data-slide-to="0" class="active" ></li>
@@ -108,6 +103,65 @@
                 <li  style="background-color: black;" data-target="#myCarousel" data-slide-to="2"></li>
               </ol>
       
+
+              <div class="container2">
+                <h2 style="margin-left: 120px;">Products</h2>
+
+                <div class="navigation">
+                  <button class="nav-btn" id="prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                  </svg>
+                </button>
+
+                  <button class="nav-btn" id="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="card-row" id="cardRow">
+                  <div class="card">
+                    <div class="card-content">
+                      <h3>Card 1</h3>
+                      <p>Some description for card 1.</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <h3>Card 2</h3>
+                      <p>Some description for card 2.</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <h3>Card 3</h3>
+                      <p>Some description for card 3.</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <h3>Card 4</h3>
+                      <p>Some description for card 4.</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <h3>Card 5</h3>
+                      <p>Some description for card 5.</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <h3>Card 6</h3>
+                      <p>Some description for card 6.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              
             </body>
             <script>
                 
@@ -128,6 +182,28 @@
                   console.log(`Blocked setTimeout with ID: ${id}`);
                   return id; 
                 };
+
+
+
+                const cardRow = document.getElementById('cardRow');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    let currentTranslate = 0;
+    const cardWidth = cardRow.querySelector('.card').offsetWidth;
+
+    prevBtn.addEventListener('click', () => {
+      currentTranslate += cardWidth;
+      if (currentTranslate > 0) currentTranslate = 0;
+      cardRow.style.transform = `translateX(${currentTranslate}px)`;
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentTranslate -= cardWidth;
+      const maxTranslate = -(cardRow.scrollWidth - cardRow.clientWidth);
+      if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
+      cardRow.style.transform = `translateX(${currentTranslate}px)`;
+    });
               </script>
     
 </body>
