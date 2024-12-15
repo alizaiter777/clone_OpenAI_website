@@ -10,7 +10,7 @@
     padding: 0 ; 
 }
 
-.container{
+.container1{
     text-align: center;
     width: 100%;
     min-height: 100vh;
@@ -22,21 +22,21 @@
     background-position: center;
     background-attachment: fixed;
 }
-.container-item{
+.container1-item{
     text-align: center;
     margin-left: 100px;
     margin-bottom: 300px;
 
 }
-.container-item:first-child{
+.container1-item:first-child{
     text-align: left;
 }
-.container-item:last-child{
+.container1-item:last-child{
     text-align: right;
     margin-right: 100px;
 
 }
-.container ul {
+.container1 ul {
     list-style: none;
     padding: 0;
     
@@ -47,6 +47,7 @@
 .navbar-item {
     text-align: center; 
     margin-left: 100px;
+    padding-right: 100px;
     
    
   }
@@ -87,10 +88,10 @@
 
 .hover-element {
     padding: 0;
-    font-size: 16px;
-    width: 200px;
-    height: 50px;
-    font-family: monospace;
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     line-height: 30px;
     cursor: pointer;
@@ -135,3 +136,16 @@
     }
   }
   
+  .slider__button {
+    display: inline-flex;
+    background-color: black;
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 130px;
+  }
