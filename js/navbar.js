@@ -70,6 +70,19 @@ function loadPage() {
     }
 }
 
+
+const cards = document.querySelectorAll('.card');
+  
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const url = card.getAttribute('data-url');
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
+
+  
 function redirectPage(url) {
     window.location.href = url;
 }
