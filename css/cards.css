@@ -20,6 +20,7 @@
     padding-left: 20px
 ;
   }
+  
 
   .card-content {
     background: #fff;
@@ -43,6 +44,44 @@
     font-size: 15px;
     color:black;
   }
+  
+
+  .main-card{
+    
+    flex: 0 0 97%; 
+    max-width: 97%; 
+    padding: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+      
+  }
+
+  .main-card-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 450px;
+    width: 1000px;
+    
+  }
+
+
+  .main-card-content h3 {
+    margin-top:200px;
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+  }
+
+  .main-card-content p {
+    text-align: center;
+    font-size: 15px;
+    color:black;
+  }
+
+  
 
   
   .navigation {

@@ -1,6 +1,29 @@
 document.addEventListener("DOMContentLoaded", loadPage);
 
 function loadPage() {
+
+
+    const prevBtnMain = document.getElementById('prev-main');
+    const nextBtnMain= document.getElementById('next-main');
+    const cardRowMain = document.getElementById('cardRow-main');
+    const cardWidthMain = cardRowMain.querySelector('.main-card').offsetWidth;
+    let currentTranslateMain = 0;
+
+    prevBtnMain.addEventListener('click', () => {
+        currentTranslateMain += cardWidthMain;
+        if (currentTranslateMain > 0) currentTranslateMain = 0;
+        cardRowMain.style.transform = `translateX(${currentTranslateMain}px)`;
+    });
+
+    nextBtnMain.addEventListener('click', () => {
+        currentTranslateMain -= cardWidthMain;
+        const maxTranslateMain = -(cardRowMain.scrollWidth - cardRowMain.clientWidth);
+        if (currentTranslateMain < maxTranslateMain) currentTranslateMain = maxTranslateMain;
+        cardRowMain.style.transform = `translateX(${currentTranslateMain}px)`;
+    });   
+
+
+
     const prevBtnProducts = document.getElementById('prev-products');
     const nextBtnProducts = document.getElementById('next-products');
     const cardRowProducts = document.getElementById('cardRow-products');
@@ -82,7 +105,7 @@ const cards = document.querySelectorAll('.card');
     });
   });
 
-  
+
 function redirectPage(url) {
     window.location.href = url;
 }
