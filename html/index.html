@@ -342,30 +342,7 @@
               
             </body>
 
-            <script>
-                
-                const originalSetInterval = window.setInterval;
-                const originalSetTimeout = window.setTimeout;
-            
-                
-                window.setInterval = function(callback, interval) {
-                  const id = originalSetInterval(callback, interval);
-                  clearInterval(id);
-                  console.log(`Blocked setInterval with ID: ${id}`);
-                  return id;
-                };
-            
-                window.setTimeout = function(callback, delay) {
-                  const id = originalSetTimeout(callback, delay);
-                  clearTimeout(id);
-                  console.log(`Blocked setTimeout with ID: ${id}`);
-                  return id; 
-                };
-
-
-
-                
-              </script>
+          
     
 </body>
 
